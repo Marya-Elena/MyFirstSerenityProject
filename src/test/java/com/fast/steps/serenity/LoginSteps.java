@@ -6,6 +6,7 @@ import com.fast.pages.MyAccountPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class LoginSteps extends ScenarioSteps {
 
@@ -39,18 +40,10 @@ public class LoginSteps extends ScenarioSteps {
         loginPage.clickLoginButton();
     }
 
-//    @Step
-//   public void checkLoggedIn(){
-//     Assert.assertTrue(myAccountPage.checkLoggedIn());
-//   }
-
-    @StepGroup
-    public void login(){
-       navigateToHomepage();
-        goToLogin();
-       setEmailLogin();
-        setPassword();
-        clickOnLoginButton();
-        // checkLoggedIn();
+    @Step
+   public void checkLoggedIn(){
+        Assert.assertTrue(myAccountPage.checkLoggedIn());
     }
+
+
 }

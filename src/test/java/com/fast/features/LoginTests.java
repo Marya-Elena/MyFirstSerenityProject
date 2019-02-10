@@ -14,10 +14,8 @@ public class LoginTests {
 
    @Managed(uniqueSession = true)
     private WebDriver driver;
-
     @Steps
     LoginSteps loginSteps;
-
     @Test
     public void validLoginTest(){
       loginSteps.navigateToHomepage();
@@ -25,8 +23,7 @@ public class LoginTests {
        loginSteps.setEmailLogin();
        loginSteps.setPassword();
        loginSteps.clickOnLoginButton();
-       //loginSteps.checkLoggedIn();
+       loginSteps.checkLoggedIn();
     }
-
 
     }

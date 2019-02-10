@@ -8,35 +8,31 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("http://qa2.fasttrackit.org:8008/?post_type=product")
 public class CartPage extends PageObject {
 
-    @FindBy(css="#menu-item-63 > a")
+    @FindBy(css="li[id='menu-item-63']")
     private WebElementFacade menuButton;
-
-    @FindBy( css="#menu-item-66 > a")
-    private WebElementFacade ShopSection;
-
+   // #menu-item-66 > a
+    @FindBy( css="li[id='menu-item-66']")
+    private WebElementFacade shopPage;
+//#primary > ul > li.item-prod-wrap.wow.flipInY.post-19.product.type-product.status-publish.has-post-thumbnail.product_cat-accessories.instock.sale.taxable.shipping-taxable.purchasable.product-type-simple > div.collection_desc.clearfix > div.title-cart > a.collection_title > h3
     @FindBy (css="#primary > ul > li.item-prod-wrap.wow.flipInY.post-19.product.type-product.status-publish.has-post-thumbnail.product_cat-accessories.instock.sale.taxable.shipping-taxable.purchasable.product-type-simple > div.collection_combine.item-img > a > img")
     private WebElementFacade imageProduct;
 
-    @FindBy(css = "#product-19 > div.summary.entry-summary > form > button")
-    private WebElementFacade AddToCartProduct;
+    @FindBy(css = "#product-19 button[name='add-to-cart']")
+    private WebElementFacade buttonAddToCart;
 
 
     public void goToHomeMenu(){
         clickOn(menuButton);
     }
-    public void goToShopSection (){
-        clickOn(ShopSection);
+    public void clickToShopPage (){
+        clickOn(shopPage);
     }
-    public void clickImageProduct(){
+    public void clickOnTheImageProduct(){
         clickOn(imageProduct);}
 
-    public void  clickProductToCart (){
-        clickOn(AddToCartProduct);
+    public void  clickOnButtonAddToCart (){
+        clickOn(buttonAddToCart);
     }
-
-
-
-
 
 
 }

@@ -26,8 +26,8 @@ public class SearchTests {
         homeSteps.navigateToHomepage();
         searchSteps.navigateToShopPage();
         searchSteps.navigateToSerachButton();
-        searchSteps.searchAftaraWord();
-       // searchSteps.typeAWord();
+        searchSteps.searchAftarAWord();
+        searchSteps.typeAWord();
         searchSteps.goAndClickSearchButton();
     }
 

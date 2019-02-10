@@ -1,8 +1,9 @@
 package com.fast.features;
 
-import com.fast.steps.serenity.CartSteps;
+
 import com.fast.steps.serenity.HomeSteps;
 import com.fast.steps.serenity.LoginSteps;
+import com.fast.steps.serenity.MyAccountSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -11,23 +12,23 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class CartTests {
-
+public class MyAccountTests {
     @Managed(uniqueSession = true)
     private WebDriver driver;
 
     @Steps
-    HomeSteps homeSteps;
-    @Steps
-    CartSteps cartSteps;
+    MyAccountSteps myAccountSteps;
 
     @Test
 
-    public void addToCart() {
-        homeSteps.navigateToHomepage();
-        cartSteps.navigateToPageShop();
-        cartSteps.goToTheImageProduct();
-        cartSteps.goToAddToCartProduct();
-        cartSteps.checkAddToCart();
+    public void setValidDataAccount(){
+        myAccountSteps.goToLoginPage();
+        myAccountSteps.clickOnTheButtonAccountDetails();
+        myAccountSteps.goToSetFirstNameDataAccount();
+        myAccountSteps.goToSetLastNameDataAccount();
+        myAccountSteps.goToSetEmailAdressDataAccount();
+        myAccountSteps.clickOnButtonSaveChangesDataAccount();
+
     }
+
 }

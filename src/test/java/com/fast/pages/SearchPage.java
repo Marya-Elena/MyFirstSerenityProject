@@ -12,25 +12,21 @@ import org.openqa.selenium.WebElement;
 
 public class SearchPage extends PageObject {
 
-    @FindBy(css="#menu-item-63 > a")
+    @FindBy(css="li[id='menu-item-63']")
     private WebElementFacade menuButton;
 
-    @FindBy( css="#menu-item-66 > a")
-    private WebElementFacade ShopSection;
+    @FindBy( css="li[id='menu-item-66']")
+    private WebElementFacade shopPage;
 
-    //#masthead > div.main-header > div > div.right-links > div.header-search > a > i
     @FindBy (css="div.header-search > a > i.fa-search")
     private WebElementFacade SearchButton;
 
-   //div.header-search > div > form > input[class='search-field'] //pas ok cand cauti dupa un nume de produs
-  // #masthead > div.main-header > div > div.right-links > div.header-search > div > form > input
     @FindBy (css = "div.header-search > div > form > input[class='search-field']")
     private WebElementFacade WordSearchField;
 
-//    @FindBy(id="cap")
-//    private WebElement searchWord;
+   @FindBy(css="input.search-field")
+    private WebElement searchWord;
 
-    // /#masthead > div.main-header > div > div.right-links > div.header-search > div > form > button > i
     @FindBy(css = "div > form > button>i[class= 'fa fa-search']")
     private WebElementFacade PushSearchButton;
 
@@ -38,8 +34,8 @@ public class SearchPage extends PageObject {
         clickOn(menuButton);
     }
 
-     public void goToShopSection (){
-        clickOn(ShopSection);
+     public void goToShopPageSection (){
+        clickOn(shopPage);
      }
      public void goToSearchButton (){
         waitABit(10);
@@ -50,11 +46,11 @@ public class SearchPage extends PageObject {
         clickOn(WordSearchField);
     }
 
-//    public void setWordSearchField (){
-//        waitABit(10);
-//       typeInto(searchWord,"cap");
-//
-//    }
+    public void setWordSearchField (){
+        waitABit(10);
+       typeInto(searchWord,"cap");
+
+    }
 
      public void clickOnTheSearchButton(){
         clickOn( PushSearchButton);

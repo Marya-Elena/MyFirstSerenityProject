@@ -23,20 +23,14 @@ public class RegisterTest {
     @Steps
     RegisterSteps registerSteps;
 
-//    @Test
-//        public void openHomePage(){
-//            homeSteps.navigateToHomepage();
-//            homeSteps.goToLogin();
-//        }
 
         @Test
         public void registerValidDataTest (){
          homeSteps.navigateToHomepage();
          homeSteps.goToLogin();
-         //registerSteps.goToRegisterEmailField();
-        registerSteps.setEmailRegister();
-        registerSteps.setPassworRegister();
-        registerSteps.goToRegisterButton();
+         registerSteps.setEmailRegister();
+         registerSteps.setPasswordRegister();
+         registerSteps.clickOnTheRegisterButton();
 
         }
 

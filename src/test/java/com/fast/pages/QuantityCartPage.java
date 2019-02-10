@@ -9,40 +9,27 @@ import net.thucydides.core.pages.PageObject;
 public class QuantityCartPage extends PageObject {
 
     @FindBy (css = "#primary > div.woocommerce-message > a")
-    private WebElementFacade ButtonViewCart;
-     //#post-5 > div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td.product-quantity
+    private WebElementFacade clickButtonViewCart;
 
-    @FindBy(css="#post-5 > div > div > form > table > tbody > tr.woocommerce-cart-form__cart-item.cart_item > td.product-quantity")
-    private WebElementFacade fieldButtonQnty;
+    @FindBy(css="div.quantity input[step='1']")
+    private WebElementFacade fieldButtonQty;
 
-    //#quantity_5c57285643cf4
-    //#quantity_5c5722887b6b7
-    @FindBy(id="quantity_5c57285643cf4")
-    private WebElementFacade buttonChangeQnty;
+    @FindBy(css="input[id*='quantity']")
+    private WebElementFacade buttonChangeQty;
 
-    //tr:nth-child(2) > td > button[name='update_cart']
-    @FindBy(css="#post-5 > div > div > form > table > tbody > tr:nth-child(2) > td > button")
+    @FindBy(css="tr:nth-child(2) > td > button[name='update_cart']")
     private WebElementFacade buttonUpadateCart;
 
     public void clickToButtonViewCart (){
-        clickOn(ButtonViewCart);
+        clickOn(clickButtonViewCart);
     }
 
     public void setProductQuantity (){
-        clickOn(fieldButtonQnty);
+        clickOn(fieldButtonQty);
         waitABit(10);
-        typeInto(buttonChangeQnty,"3");
+        typeInto(buttonChangeQty,"3");
 
     }
-      // din 2 metode am facut 1 sus
-//    public void clickToTheFieldQnty(){
-//        clickOn(fieldButtonQnty);
-//    }
-//    //metoda urmatoare nu ruleaza!ar putea fi cu click on
-//    public void setButtonChangeQnty(){
-//        waitABit(10);
-//        typeInto(buttonChangeQnty,"3");
-//    }
 
     public void clickToButtonUpdateCart(){
         waitABit(15);

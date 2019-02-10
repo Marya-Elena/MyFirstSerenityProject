@@ -7,8 +7,8 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl("http://qa2.fasttrackit.org:8008/?product=beanie")
 public class ProductPage extends PageObject {
-    //.woocommerce-message[role='alert] -varianta scurta
-    @FindBy (css = "#primary > div.woocommerce-message")
+
+    @FindBy (css = "div.woocommerce-message")
     private WebElementFacade addToCartMessage;
 
     public boolean checkAddToCart(){

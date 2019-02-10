@@ -24,10 +24,6 @@ public class RegisterSteps extends ScenarioSteps {
         homePage.clickMenuButton();
         homePage.clickMyAccountButton();
     }
-//    @Step
-//    public void goToRegisterEmailField(){
-//        registerPage.clickRegisterEmailField();
-//    }
 
     @Step
     public void setEmailRegister(){
@@ -35,26 +31,18 @@ public class RegisterSteps extends ScenarioSteps {
     }
 
     @Step
-    public void setPassworRegister (){
+    public void setPasswordRegister (){
         registerPage.setPaswwordRegisterField();
     }
 
     @Step
-     public void goToRegisterButton(){
+     public void clickOnTheRegisterButton(){
         registerPage.clickRegisterButton();
     }
 
-     @StepGroup
 
-    public void completedRegister(){
-        navigateToHomepage();
-        goToLogin();
-        //goToRegisterEmailField();
-        setEmailRegister();
-        setPassworRegister();
-        goToRegisterButton();
 
      }
 
 
-}
+

@@ -25,14 +25,14 @@ public class QuantityCartTests {
 
     @Test
 
-    public void addQuantityToCart(){
+    public void addOtherQuantityToCart(){
         homeSteps.navigateToHomepage();
         cartSteps.navigateToPageShop();
         cartSteps.goToTheImageProduct();
         cartSteps.goToAddToCartProduct();
-        quantityCartSteps.goToTheButtonViewCart();
-        quantityCartSteps.goToSetProductQanty();
-        quantityCartSteps.goToTheButtonUpdateCart();
+        quantityCartSteps.clickOnTheButtonViewCart();
+        quantityCartSteps.clickForChangeQty();
+        quantityCartSteps.clickTheButtonUpdateCart();
     }
 
 

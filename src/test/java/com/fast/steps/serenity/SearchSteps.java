@@ -15,40 +15,30 @@ public class SearchSteps extends ScenarioSteps {
     @Step
     public void navigateToShopPage(){
         searchPage.goToHomeMenu();
-        searchPage.goToShopSection();
+        searchPage.goToShopPageSection();
     }
 
     @Step
-    public void navigateToSerachButton (){
+    public void navigateToSerachButton ()
+    {
         searchPage.goToSearchButton();
     }
     @Step
-    public void searchAftaraWord(){
+    public void searchAftarAWord()
+    {
         searchPage.goToSearchProduct();
     }
 
-//    @Step
-//    public void typeAWord(){
-//        searchPage.setWordSearchField();
-//    }
-
-
-
-
     @Step
-    public void goAndClickSearchButton(){
-        searchPage.clickOnTheSearchButton();
+    public void typeAWord()
+    {
+        searchPage.setWordSearchField();
     }
 
-    @StepGroup
-
-    public void goToFindSearchButton (){
-        navigateToHomepage();
-        navigateToShopPage();
-        navigateToSerachButton();
-        searchAftaraWord();
-        //typeAWord();
-        goAndClickSearchButton();
+    @Step
+    public void goAndClickSearchButton()
+    {
+        searchPage.clickOnTheSearchButton();
     }
 
 }

@@ -9,18 +9,19 @@ import java.util.concurrent.TimeUnit;
 
 @DefaultUrl("http://qa2.fasttrackit.org:8008/")
 public class HomePage extends PageObject {
-    @FindBy(css="#menu-item-63 > a")
+
+    @FindBy(css="li[id='menu-item-63']")
     private WebElementFacade menuButton;
 
-    @FindBy (css="#menu-item-64 > a")
-    private WebElementFacade MyAccountButton;
+
+    @FindBy (css=" li[id='menu-item-64'] ")
+    private WebElementFacade myAccountButton;
 
     public void clickMenuButton() {
-//        withTimeoutOf(18, TimeUnit.SECONDS).waitFor(menuButton);
         clickOn(menuButton);
     }
     public void clickMyAccountButton(){
         withTimeoutOf(20, TimeUnit.SECONDS).waitFor(menuButton);
-        clickOn( MyAccountButton);
+        clickOn( myAccountButton);
     }
 }

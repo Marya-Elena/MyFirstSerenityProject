@@ -20,45 +20,31 @@ public class QuantityCartSteps extends ScenarioSteps {
 
     public void navigateToPageShop(){
         cartPage.goToHomeMenu();
-        cartPage.goToShopSection();
+        cartPage.clickToShopPage();
     }
     @Step
-    public void goToTheImageProduct(){
-        cartPage.clickImageProduct();
+    public void clickToTheImageProduct(){
+        cartPage.clickOnTheImageProduct();
     }
     @Step
-    public void goToAddToCartProduct(){
-        cartPage.clickProductToCart();
+    public void clickOnAddToCartButton(){
+        cartPage.clickOnButtonAddToCart();
     }
 
     @Step
-    public void goToTheButtonViewCart (){
+    public void clickOnTheButtonViewCart (){
         quantityCartPage.clickToButtonViewCart();
     }
 
-
-
     @Step
-    public void goToSetProductQanty(){
+    public void clickForChangeQty(){
         quantityCartPage.setProductQuantity();
     }
 
     @Step
 
-    public void goToTheButtonUpdateCart(){
+    public void clickTheButtonUpdateCart(){
         quantityCartPage.clickToButtonUpdateCart();
-    }
-
-    @StepGroup
-
-    public void goToModificatedQnty(){
-        navigateToHomepage();
-        navigateToPageShop();
-        goToTheImageProduct();
-        goToAddToCartProduct();
-        goToTheButtonViewCart();
-        goToSetProductQanty();
-        goToTheButtonUpdateCart();
     }
 
 
