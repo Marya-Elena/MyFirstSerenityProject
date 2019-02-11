@@ -64,11 +64,13 @@ public class CheckoutPage extends PageObject {
         clickOn(clickaddToCartButton);
     }
 
-    public void clickOnViewCartButton(){
+    public void clickOnViewCartButton()
+    {
         clickOn(clickViewCart);
     }
 
-    public void clickOnButtonProceedCheckout(){
+    public void clickOnButtonProceedCheckout()
+    {
         clickOn(clickButtonProceedToCheckout);
     }
 
