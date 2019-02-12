@@ -26,8 +26,9 @@ public class CartTests {
     public void addToCart() {
         homeSteps.navigateToHomepage();
         cartSteps.navigateToPageShop();
-        cartSteps.goToTheImageProduct();
-        cartSteps.goToAddToCartProduct();
-        cartSteps.checkAddToCart();
+        cartSteps.addProductFindInCart("Beanie");
+        cartSteps.clickOnSymbolViewCart();
+//        cartSteps.goToAddToCartProduct();
+//        cartSteps.checkAddToCart();
     }
 }

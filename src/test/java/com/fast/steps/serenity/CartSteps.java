@@ -25,13 +25,31 @@ public class CartSteps extends ScenarioSteps {
         cartPage.clickToShopPage();
     }
 
+//    @Step
+//    public void goAndSelectAProduct(){
+//        cartPage.selectProductFromList();
+  //  }
+
+
+//    @Step
+//    public void findeProductFromList (){
+//        Assert.assertTrue(cartPage.selectProductFromList());
+//
+//    }
+//    @Step
+//    public void goToAddToCartProduct() {
+//        cartPage.clickOnButtonAddToCart();
+//    }
+
     @Step
-    public void goToTheImageProduct(){
-        cartPage.clickOnTheImageProduct();
+    public void addProductFindInCart (String text){
+        Assert.assertTrue(cartPage.selectProductFromList(text));
     }
+
     @Step
-    public void goToAddToCartProduct() {
-        cartPage.clickOnButtonAddToCart();
+
+    public void clickOnSymbolViewCart(){
+        cartPage.clickOnViewCart();
     }
     @Step
     public void checkAddToCart() {
