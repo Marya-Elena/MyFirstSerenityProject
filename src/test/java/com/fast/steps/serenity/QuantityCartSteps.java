@@ -7,6 +7,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.reports.adaptors.specflow.ScenarioStep;
 import net.thucydides.core.steps.ScenarioSteps;
+import org.junit.Assert;
 
 public class QuantityCartSteps extends ScenarioSteps {
     HomePage homePage;
@@ -14,36 +15,44 @@ public class QuantityCartSteps extends ScenarioSteps {
     QuantityCartPage quantityCartPage;
 
     @Step
-    public void navigateToHomepage(){ homePage.open(); }
+    public void typeAWord() {
+        quantityCartPage.setWordSearchField();
 
-    @Step
-
-    public void navigateToPageShop(){
-        cartPage.goToHomeMenu();
-        cartPage.clickToShopPage();
     }
     @Step
-    public void clickToTheImageProduct(){
-        cartPage.clickOnTheImageProduct();
-    }
-    @Step
-    public void clickOnAddToCartButton(){
-        cartPage.clickOnButtonAddToCart();
+    public void clickOnSearchButton(){
+        quantityCartPage.clickOnTheSearchButton();
     }
 
     @Step
-    public void clickOnTheButtonViewCart (){
+    public void clickOnBeanieProductTitle(){
+        quantityCartPage.clickOnBeanieTitle();
+    }
+
+    @Step
+    public void clickOnButtonAddToCart(){
+        quantityCartPage.clickOnButtonAddToCart();
+    }
+
+    @Step
+    public void checkedProductIsAddTocart(){
+        Assert.assertTrue(quantityCartPage.checkProductIsAddToCart());
+
+    }
+
+    @Step
+    public void clickOnTheButtonViewCart() {
         quantityCartPage.clickToButtonViewCart();
     }
 
     @Step
-    public void clickForChangeQty(){
+    public void clickForChangeQty() {
         quantityCartPage.setProductQuantity();
     }
 
     @Step
 
-    public void clickTheButtonUpdateCart(){
+    public void clickTheButtonUpdateCart() {
         quantityCartPage.clickToButtonUpdateCart();
     }
 

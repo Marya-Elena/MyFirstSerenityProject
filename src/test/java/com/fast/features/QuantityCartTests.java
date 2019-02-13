@@ -1,9 +1,12 @@
 package com.fast.features;
 
 
+import com.fast.pages.SearchPage;
 import com.fast.steps.serenity.CartSteps;
 import com.fast.steps.serenity.HomeSteps;
 import com.fast.steps.serenity.QuantityCartSteps;
+import com.fast.steps.serenity.SearchSteps;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
@@ -21,6 +24,8 @@ public class QuantityCartTests {
     @Steps
     CartSteps cartSteps;
     @Steps
+    SearchSteps searchSteps;
+    @Steps
     QuantityCartSteps quantityCartSteps;
 
     @Test
@@ -28,8 +33,13 @@ public class QuantityCartTests {
     public void addOtherQuantityToCart(){
         homeSteps.navigateToHomepage();
         cartSteps.navigateToPageShop();
-        cartSteps.goToTheImageProduct();
-        cartSteps.goToAddToCartProduct();
+        searchSteps.navigateToSerachButton();
+        searchSteps.searchAftarAWord();
+        quantityCartSteps.typeAWord();
+        quantityCartSteps.clickOnSearchButton();
+        quantityCartSteps.clickOnBeanieProductTitle();
+        quantityCartSteps.clickOnButtonAddToCart();
+        quantityCartSteps.checkedProductIsAddTocart();
         quantityCartSteps.clickOnTheButtonViewCart();
         quantityCartSteps.clickForChangeQty();
         quantityCartSteps.clickTheButtonUpdateCart();

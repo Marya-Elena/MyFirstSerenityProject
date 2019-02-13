@@ -18,18 +18,21 @@ public class CartPage extends PageObject {
     @FindBy(css = "li[id='menu-item-66']")
     private WebElementFacade shopPage;
 
-    // ".product"
-    @FindBy(css = ".item-prod-wrap")
+    // ".product"// .item-prod-wrap
+    @FindBy(css = ".product")
     List<WebElementFacade> listOfProducts;
-
-
-   //div button[name='add-to-cart']//#product-19 button[name='add-to-cart']//button.single_add_to_cart_button
-    // div.cart a.button
 
     @FindBy(css = "a[title='View cart']")
     private WebElementFacade viewCartButton;
 
+    @FindBy(css="td.product-remove a[data-product_sku='woo-beanie']")
+    private WebElementFacade removeButton;
 
+    @FindBy (css = "div.content-area div[role='alert']")
+    private WebElementFacade removeProductMessage;
+
+    @FindBy(css="p.return-to-shop a.button ")
+    private WebElementFacade returnToShopButton;
 
 
     public void goToHomeMenu() {
@@ -51,21 +54,26 @@ public class CartPage extends PageObject {
 
     }
 
-    public void clickOnViewCart(){
+    public void clickOnViewCart() {
         clickOn(viewCartButton);
     }
 
+    public void clickOnRemoveButton(){
+        withTimeoutOf(12,TimeUnit.SECONDS).waitFor(removeButton);
+        clickOn(removeButton);
+    }
 
+    public boolean checkRemoveProduct(){
+        withTimeoutOf(15,TimeUnit.SECONDS).waitFor(removeProductMessage);
+        return removeProductMessage.containsText("“Beanie” removed. Undo?");
+    }
 
+    public void clickReturnToShopButton(){
+        clickOn(returnToShopButton);
 
+    }
 
-//    public void  clickOnButtonAddToCart (){
-//        withTimeoutOf(10, TimeUnit.SECONDS).waitFor(buttonAddToCart);
-//        clickOn(buttonAddToCart);
-//    }
-
-
-}
+  }
 
 
 

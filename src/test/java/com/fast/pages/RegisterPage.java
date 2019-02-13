@@ -4,10 +4,13 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+
+import java.util.concurrent.TimeUnit;
+
 @DefaultUrl ("http://qa2.fasttrackit.org:8008/?page_id=7")
 
 public class RegisterPage extends PageObject {
-
+//private String searchTermLength = RandomStringUtils.randomAlphabetic(25);
     @FindBy (id="reg_email")
     private WebElementFacade emailRegisterField;
 
@@ -18,7 +21,7 @@ public class RegisterPage extends PageObject {
     private WebElementFacade registerButton;
 
     public void setEmailRegisterField (){
-        waitABit(10);
+       withTimeoutOf(10, TimeUnit.SECONDS).waitFor(emailRegisterField);
         typeInto(emailRegisterField,"kyalcin.a@qzvbxqe5dx.tk");
     }
 

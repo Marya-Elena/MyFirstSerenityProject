@@ -18,6 +18,7 @@ public class MyAccountPage extends PageObject {
         return welcomeMessageStrong.containsText("kyalcin.a");
     }
 
+
     @FindBy( css = "li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-account > a")
      private WebElementFacade buttonAccountDetails;
 

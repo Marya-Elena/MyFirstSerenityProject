@@ -8,13 +8,15 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("http://qa2.fasttrackit.org:8008/?product=beanie")
 public class ProductPage extends PageObject {
 
+
+
     @FindBy (css = "div.woocommerce-message")
     private WebElementFacade addToCartMessage;
 
     public boolean checkAddToCart(){
         waitFor(addToCartMessage);
        return addToCartMessage.containsText("Beanie” has been added to your cart");
-    }
+   }
 
 
 }

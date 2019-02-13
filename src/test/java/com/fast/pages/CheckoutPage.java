@@ -8,6 +8,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import java.util.concurrent.TimeUnit;
 
 @DefaultUrl("http://qa2.fasttrackit.org:8008/?page_id=6")
+
 public class CheckoutPage extends PageObject {
 
     @FindBy( css="button[name='add-to-cart']")
@@ -51,14 +52,8 @@ public class CheckoutPage extends PageObject {
 
     @FindBy(id="billing_email")
     private WebElementFacade SetBillingEmail;
-   //button[id*='place_order']//#payment
     @FindBy(id="payment")
     private WebElementFacade clickButtonPlaceOrder;
-
-//    // p[class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received']
-//    @FindBy(css="#post-6 > div > div > div > p.woocommerce-notice.woocommerce-notice--success.woocommerce-thankyou-order-received")
-//    private WebElementFacade checkTheOrderIsPlaced;
-
 
     public void clickOnaddToCartButton(){
         clickOn(clickaddToCartButton);
@@ -74,49 +69,48 @@ public class CheckoutPage extends PageObject {
         clickOn(clickButtonProceedToCheckout);
     }
 
-    public void goToSetBillingFistName(){
+    public void setBillingFistName(){
         typeInto(setBillingFirstName,"Chis");
     }
 
-    public void goToSetBillingLastName() {
+    public void setBillingLastName() {
         typeInto(setBillingLastName, "Maria-Elena");
     }
 
-    public void goToSetBillingCompany(){
+    public void setBillingCompany(){
         typeInto(setBillingCompany,"Nu e cazul");
     }
 
 
-     public void goTosetBillingCountryField(){
+     public void setBillingCountryField(){
         setCountryField.selectByVisibleText("Romania");
     }
 
-
-     public  void goTosetBillingAdress(){
+     public  void setBillingAdress(){
         typeInto(setBillingAdress,"N.Teclu, nr.1");
      }
 
-     public void goToSetBillingAdressTwo(){
+     public void setBillingAdressTwo(){
         typeInto(setBillingAdressTwo,"N.Teclu, nr.1");
      }
 
-     public void goTosetBillingCity(){
+     public void setBillingCity(){
         typeInto(setBillingCity, "Cluj-Napoca");
      }
 
-     public void goTosetBillingCountyField(){
+     public void setBillingCountyField(){
         setBillingCounty.selectByVisibleText("Cluj");
      }
 
-     public void goTosetBillingPostcode(){
+     public void setBillingPostcode(){
         typeInto(setBillingPostcode,"400252");
      }
 
-    public void goTosetBillingPhone(){
+    public void setBillingPhone(){
         typeInto(setBillingPhone,"0735112111");
     }
 
-    public void goToSetBillingEmail(){
+    public void setBillingEmail(){
         typeInto(SetBillingEmail,"kyalcin.a@qzvbxqe5dx.tk");
     }
 

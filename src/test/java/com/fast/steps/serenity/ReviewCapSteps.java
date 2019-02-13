@@ -22,16 +22,18 @@ public class ReviewCapSteps extends ScenarioSteps {
         loginPage.setPasswordField();
         loginPage.clickLoginButton();
         myAccountPage.checkLoggedIn();
-        searchPage.goToSearchButton();
-        searchPage.goToSearchProduct();
+        searchPage.clickToSearchButton();
+        searchPage.clicksearchProduct();
         searchPage.setWordSearchField();
         searchPage.clickOnTheSearchButton();
     }
      @StepGroup
     public void goAndLeavAReview(){
-        reviewPageCap.goToClickOnProductTitle();
-        reviewPageCap.goToClickOnReviewButton();
-        reviewPageCap.goAndWriteAnReview();
+        reviewPageCap.clickOnProductTitle();
+        reviewPageCap.clickOnReviewButton();
+        reviewPageCap.writeAnReview();
+       // reviewPageCap.typeTheName();
+       // reviewPageCap.typeEmail();
         reviewPageCap.clickOnTheSubmitButton();
      }
 

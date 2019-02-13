@@ -7,11 +7,10 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class SearchSteps extends ScenarioSteps {
-    HomePage homePage;
+
     SearchPage searchPage;
 
-    @Step
-    public void navigateToHomepage(){ homePage.open(); }
+
     @Step
     public void navigateToShopPage(){
         searchPage.goToHomeMenu();
@@ -19,25 +18,22 @@ public class SearchSteps extends ScenarioSteps {
     }
 
     @Step
-    public void navigateToSerachButton ()
-    {
-        searchPage.goToSearchButton();
-    }
-    @Step
-    public void searchAftarAWord()
-    {
-        searchPage.goToSearchProduct();
+    public void navigateToSerachButton() {
+        searchPage.clickToSearchButton();
     }
 
     @Step
-    public void typeAWord()
-    {
+    public void searchAftarAWord() {
+        searchPage.clicksearchProduct();
+    }
+
+    @Step
+    public void typeAWord() {
         searchPage.setWordSearchField();
     }
 
     @Step
-    public void goAndClickSearchButton()
-    {
+    public void goAndClickSearchButton() {
         searchPage.clickOnTheSearchButton();
     }
 

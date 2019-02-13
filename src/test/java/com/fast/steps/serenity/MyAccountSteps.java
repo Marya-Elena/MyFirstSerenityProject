@@ -24,27 +24,24 @@ public class MyAccountSteps extends ScenarioSteps {
 
     }
 
-     @Step
-   public void clickOnTheButtonAccountDetails(){
+    @Step
+    public void clickOnTheButtonAccountDetails() {
         myAccountPage.clickOnButtonAccountDetails();
     }
-   @Step
-   public void goToSetFirstNameDataAccount(){
+    @Step
+    public void goToSetFirstNameDataAccount() {
         myAccountPage.setFirstNameDataAccount();
-   }
-
+    }
    @Step
     public void goToSetLastNameDataAccount(){
         myAccountPage.setLastNameDataAccount();
    }
 
-   @Step
-    public void goToSetEmailAdressDataAccount(){
+    @Step
+    public void goToSetEmailAdressDataAccount() {
         myAccountPage.setEmailAddress();
-   }
-
+    }
    @Step
-
     public void clickOnButtonSaveChangesDataAccount(){
         myAccountPage.clickOnButtonSaveChanges();
    }

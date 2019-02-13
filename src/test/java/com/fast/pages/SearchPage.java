@@ -7,6 +7,8 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 @DefaultUrl("http://qa2.fasttrackit.org:8008/")
 
 
@@ -24,36 +26,37 @@ public class SearchPage extends PageObject {
     @FindBy (css = "div.header-search > div > form > input[class='search-field']")
     private WebElementFacade WordSearchField;
 
-   @FindBy(css="input.search-field")
+    @FindBy(css = "input.search-field")
     private WebElement searchWord;
 
     @FindBy(css = "div > form > button>i[class= 'fa fa-search']")
     private WebElementFacade PushSearchButton;
 
-    public void goToHomeMenu(){
+    public void goToHomeMenu() {
         clickOn(menuButton);
     }
 
-     public void goToShopPageSection (){
+    public void goToShopPageSection() {
         clickOn(shopPage);
-     }
-     public void goToSearchButton (){
-        waitABit(10);
-        clickOn(SearchButton);
-     }
+    }
 
-    public void goToSearchProduct(){
+    public void clickToSearchButton() {
+        withTimeoutOf(10, TimeUnit.SECONDS).waitFor(SearchButton);
+        clickOn(SearchButton);
+    }
+
+    public void clicksearchProduct() {
         clickOn(WordSearchField);
     }
 
-    public void setWordSearchField (){
-        waitABit(10);
-       typeInto(searchWord,"cap");
+    public void setWordSearchField() {
+        withTimeoutOf(10, TimeUnit.SECONDS).waitFor(searchWord);
+        typeInto(searchWord, "cap");
 
     }
 
-     public void clickOnTheSearchButton(){
-        clickOn( PushSearchButton);
-     }
+    public void clickOnTheSearchButton() {
+        clickOn(PushSearchButton);
+    }
 
 }

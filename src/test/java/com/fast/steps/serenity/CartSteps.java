@@ -9,52 +9,36 @@ import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
 
 public class CartSteps extends ScenarioSteps {
-
-    HomePage homePage;
     CartPage cartPage;
-    ProductPage productPage;
-
     @Step
-    public void navigateToHomepage()
-    { homePage.open(); }
-
-    @Step
-
-    public void navigateToPageShop(){
+    public void navigateToPageShop() {
         cartPage.goToHomeMenu();
         cartPage.clickToShopPage();
     }
 
-//    @Step
-//    public void goAndSelectAProduct(){
-//        cartPage.selectProductFromList();
-  //  }
-
-
-//    @Step
-//    public void findeProductFromList (){
-//        Assert.assertTrue(cartPage.selectProductFromList());
-//
-//    }
-//    @Step
-//    public void goToAddToCartProduct() {
-//        cartPage.clickOnButtonAddToCart();
-//    }
-
     @Step
-    public void addProductFindInCart (String text){
+    public void addProductFindInCart(String text) {
         Assert.assertTrue(cartPage.selectProductFromList(text));
     }
 
     @Step
-
-    public void clickOnSymbolViewCart(){
+    public void clickOnSymbolViewCart() {
         cartPage.clickOnViewCart();
     }
+
     @Step
-    public void checkAddToCart() {
-        Assert.assertTrue(productPage.checkAddToCart());
+    public void clickTheRemoveButton(){
+        cartPage.clickOnRemoveButton();
     }
+    @Step
+    public void checkRemovedProduct(){
+        Assert.assertTrue(cartPage.checkRemoveProduct());
+    }
+    @Step
+    public void clickRetrurnShopButton(){
+        cartPage.clickReturnToShopButton();
+    }
+
 
 
 }
