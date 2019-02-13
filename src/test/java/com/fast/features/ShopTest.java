@@ -29,7 +29,7 @@ public class ShopTest {
         shopSteps.sortByPrice();
         shopSteps.clickOnViewProduct();
         shopSteps.clickOnViewCart();
-
+        shopSteps.checkedTotal();
 
     }
 

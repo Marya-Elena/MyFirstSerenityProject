@@ -14,18 +14,23 @@ public class ShopSteps extends ScenarioSteps {
     }
 
     @Step
-    public void sortByPrice(){
+    public void sortByPrice() {
         shopPage.clickButtonFilterByPrice();
     }
+
     @Step
-    public void clickOnViewProduct(){
+    public void clickOnViewProduct() {
         shopPage.clickButtonViewProduct();
     }
 
     @Step
-    public void clickOnViewCart(){
+    public void clickOnViewCart() {
         shopPage.clickViewCart();
     }
 
+    @Step
 
+    public void checkedTotal(){
+        shopPage.checkquantityTotal();
+    }
 }

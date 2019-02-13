@@ -43,11 +43,12 @@ public class QuantityCartPage extends PageObject {
         typeInto(searchWord, "beanie");
 
     }
-    public void clickOnTheSearchButton(){
-        clickOn( PushSearchButton);
+
+    public void clickOnTheSearchButton() {
+        clickOn(PushSearchButton);
     }
 
-    public void clickOnBeanieTitle(){
+    public void clickOnBeanieTitle() {
         clickOn(beanieTitle);
     }
 
@@ -62,7 +63,7 @@ public class QuantityCartPage extends PageObject {
     }
 
 
-    public void clickToButtonViewCart (){
+    public void clickToButtonViewCart() {
         clickOn(clickButtonViewCart);
     }
 
