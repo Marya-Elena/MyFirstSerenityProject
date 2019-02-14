@@ -16,10 +16,9 @@ public class CheckoutSteps extends ScenarioSteps {
     public void searchAProduct() {
         searchPage.clickToSearchButton();
         searchPage.clicksearchProduct();
-        searchPage.setWordSearchField();
+        searchPage.setWordSearchField("cap");
         searchPage.clickOnTheSearchButton();
         reviewPageCap.clickOnProductTitle();
-
     }
 
     @Step
@@ -31,17 +30,17 @@ public class CheckoutSteps extends ScenarioSteps {
     @Step
     public void completeBillingOrders() {
         checkoutPage.clickOnButtonProceedCheckout();
-        checkoutPage.setBillingFistName();
-        checkoutPage.setBillingLastName();
-        checkoutPage.setBillingCompany();
-        checkoutPage.setBillingCountryField();
-        checkoutPage.setBillingAdress();
-        checkoutPage.setBillingAdressTwo();
-        checkoutPage.setBillingCity();
-        checkoutPage.setBillingCountyField();
-        checkoutPage.setBillingPostcode();
-        checkoutPage.setBillingPostcode();
-        checkoutPage.setBillingEmail();
+        checkoutPage.setBillingFistName("Chis");
+        checkoutPage.setBillingLastName("Maria-Elena");
+        checkoutPage.setBillingCompany("Nu e cazul");
+        checkoutPage.setBillingCountryField("Romania");
+        checkoutPage.setBillingAdress("N.Teclu, nr.1");
+        checkoutPage.setBillingAdressTwo("N.Teclu, nr.1");
+        checkoutPage.setBillingCity("Cluj-Napoca");
+        checkoutPage.setBillingCountyField("Cluj");
+        checkoutPage.setBillingPostcode("400252");
+        checkoutPage.setBillingPhone("0735112111");
+        checkoutPage.setBillingEmail("kyalcin.a@qzvbxqe5dx.tk");
         checkoutPage.clickButtonPlaceOrder();
     }
 }

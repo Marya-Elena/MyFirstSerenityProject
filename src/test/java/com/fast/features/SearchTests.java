@@ -12,13 +12,13 @@ import org.openqa.selenium.WebDriver;
 @RunWith(SerenityRunner.class)
 public class SearchTests {
     @Managed(uniqueSession = true)
-    private WebDriver driver;
+     WebDriver driver;
 
     @Steps
     HomeSteps homeSteps;
 
     @Steps
-    SearchSteps searchSteps;
+     SearchSteps searchSteps;
 
     @Test
 
@@ -27,7 +27,7 @@ public class SearchTests {
         searchSteps.navigateToShopPage();
         searchSteps.navigateToSerachButton();
         searchSteps.searchAftarAWord();
-        searchSteps.typeAWord();
+        searchSteps.typeAWord("cap");
         searchSteps.goAndClickSearchButton();
     }
 

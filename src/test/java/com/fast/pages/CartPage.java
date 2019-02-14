@@ -18,7 +18,6 @@ public class CartPage extends PageObject {
     @FindBy(css = "li[id='menu-item-66']")
     private WebElementFacade shopPage;
 
-    // ".product"// .item-prod-wrap
     @FindBy(css = ".product")
     List<WebElementFacade> listOfProducts;
 
@@ -63,9 +62,9 @@ public class CartPage extends PageObject {
         clickOn(removeButton);
     }
 
-    public boolean checkRemoveProduct(){
+    public boolean checkRemoveProduct(String messagesRemove){
         withTimeoutOf(15,TimeUnit.SECONDS).waitFor(removeProductMessage);
-        return removeProductMessage.containsText("“Beanie” removed. Undo?");
+        return removeProductMessage.containsText(messagesRemove);
     }
 
     public void clickReturnToShopButton(){

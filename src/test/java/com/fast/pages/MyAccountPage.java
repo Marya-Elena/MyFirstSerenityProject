@@ -12,13 +12,6 @@ public class MyAccountPage extends PageObject {
     @FindBy(css = "div.woocommerce-MyAccount-content strong:nth-child(1)")
     private WebElementFacade welcomeMessageStrong;
 
-
-    public boolean checkLoggedIn(){
-        waitFor(welcomeMessageStrong);
-        return welcomeMessageStrong.containsText("kyalcin.a");
-    }
-
-
     @FindBy( css = "li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--edit-account > a")
      private WebElementFacade buttonAccountDetails;
 
@@ -35,27 +28,36 @@ public class MyAccountPage extends PageObject {
     @FindBy(css="button[value='Save changes']")
     private WebElementFacade buttonSaveChanges;
 
+    @FindBy(css=".woocommerce-error strong")
+    private WebElementFacade errorInvalidUsernameStrong;
 
+    public boolean checkLoggedIn( String messageText){
+        waitFor(welcomeMessageStrong);
+        return welcomeMessageStrong.containsText(messageText);
+    }
     public void clickOnButtonAccountDetails(){
         clickOn(buttonAccountDetails);
     }
-    public void setFirstNameDataAccount(){
+    public void setFirstNameDataAccount(String firstname){
         waitFor(writeFirstName);
-        typeInto(writeFirstName,"Chis");
+        typeInto(writeFirstName,firstname);
 
     }
-    public void setLastNameDataAccount(){
+    public void setLastNameDataAccount(String lastName){
         waitFor(writeLastName);
-        typeInto(writeLastName,"Maria-Elena");
+        typeInto(writeLastName,lastName);
     }
 
-    public void setEmailAddress(){
+    public void setEmailAddress(String emailAdress){
         waitFor(writeEmailAddress);
-        typeInto(writeEmailAddress,"kyalcin.a@qzvbxqe5dx.tk");
+        typeInto(writeEmailAddress,emailAdress);
     }
 
     public void clickOnButtonSaveChanges(){
         clickOn(buttonSaveChanges);
     }
-
+    public boolean checkLoggedInvalid( String messageErrorText){
+        waitFor(errorInvalidUsernameStrong);
+        return errorInvalidUsernameStrong.containsText(messageErrorText);
+    }
 }

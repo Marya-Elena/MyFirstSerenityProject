@@ -20,13 +20,13 @@ public class RegisterPage extends PageObject {
     @FindBy (css="button.button[name='register']")
     private WebElementFacade registerButton;
 
-    public void setEmailRegisterField (){
+    public void setEmailRegisterField (String registerEmail){
        withTimeoutOf(10, TimeUnit.SECONDS).waitFor(emailRegisterField);
-        typeInto(emailRegisterField,"kyalcin.a@qzvbxqe5dx.tk");
+        typeInto(emailRegisterField,registerEmail);
     }
 
-    public void setPaswwordRegisterField(){
-       typeInto( paswwordRegisterField, "test2019test20");
+    public void setPaswwordRegisterField(String registerPassword){
+       typeInto( paswwordRegisterField, registerPassword);
 
     }
     public void clickRegisterButton(){

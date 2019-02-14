@@ -1,5 +1,6 @@
 package com.fast.features;
 
+import com.fast.Utils.Constants;
 import com.fast.steps.serenity.CheckoutSteps;
 import com.fast.steps.serenity.HomeSteps;
 import com.fast.steps.serenity.LoginSteps;
@@ -18,20 +19,18 @@ public class CheckoutTests {
     private WebDriver driver;
 
     @Steps
-    HomeSteps homeSteps;
+    private HomeSteps homeSteps;
     @Steps
-    LoginSteps loginSteps;
+    private LoginSteps loginSteps;
 
     @Steps
-    CheckoutSteps checkoutSteps;
+    private CheckoutSteps checkoutSteps;
     @Test
 
-    public void addAProductInCartAndChecout(){
+    public void addAProductInCartAndCheckout(){
         homeSteps.goToHomePage();
-        loginSteps.setEmailLogin();
-        loginSteps.setPassword();
-        loginSteps.clickOnLoginButton();
-        loginSteps.checkLoggedIn();
+        loginSteps.loginWithValidCredentials(Constants.USER_EMAIL,Constants.USER_PASSWORD);
+        loginSteps.checkLoggedIn("kyalcin.a");
         checkoutSteps.searchAProduct();
         checkoutSteps.addToCartProduct();
         checkoutSteps.completeBillingOrders();

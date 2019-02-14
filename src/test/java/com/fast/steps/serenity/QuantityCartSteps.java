@@ -15,9 +15,8 @@ public class QuantityCartSteps extends ScenarioSteps {
     QuantityCartPage quantityCartPage;
 
     @Step
-    public void typeAWord() {
-        quantityCartPage.setWordSearchField();
-
+    public void typeAWord(String typeProductName) {
+        quantityCartPage.setWordSearchField(typeProductName);
     }
     @Step
     public void clickOnSearchButton(){
@@ -25,19 +24,18 @@ public class QuantityCartSteps extends ScenarioSteps {
     }
 
     @Step
-    public void clickOnBeanieProductTitle(){
+    public void clickOnBeanieProductTitle() {
         quantityCartPage.clickOnBeanieTitle();
     }
 
     @Step
-    public void clickOnButtonAddToCart(){
+    public void clickOnButtonAddToCart() {
         quantityCartPage.clickOnButtonAddToCart();
     }
 
     @Step
-    public void checkedProductIsAddTocart(){
-        Assert.assertTrue(quantityCartPage.checkProductIsAddToCart());
-
+    public void checkedProductIsAddToCart(String messageName){
+        Assert.assertTrue(quantityCartPage.checkProductIsAddToCart(messageName));
     }
 
     @Step
@@ -51,10 +49,13 @@ public class QuantityCartSteps extends ScenarioSteps {
     }
 
     @Step
-
     public void clickTheButtonUpdateCart() {
         quantityCartPage.clickToButtonUpdateCart();
     }
 
+    @Step
+    public void chekedTotalPriceValue(){
+        quantityCartPage.checkedTotalPrice();
+    }
 
 }

@@ -28,8 +28,8 @@ public class SearchSteps extends ScenarioSteps {
     }
 
     @Step
-    public void typeAWord() {
-        searchPage.setWordSearchField();
+    public void typeAWord(String typaProduct) {
+        searchPage.setWordSearchField(typaProduct);
     }
 
     @Step

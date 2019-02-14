@@ -35,12 +35,18 @@ public class QuantityCartPage extends PageObject {
     @FindBy(css="input[id*='quantity']")
     private WebElementFacade buttonChangeQty;
 
+    @FindBy (css=" .product-price span.amount")
+    private WebElementFacade productPrice;
+
+    @FindBy(css=".product-subtotal .amount")
+    private WebElementFacade productTotalPrice;
+
     @FindBy(css="tr:nth-child(2) > td > button[name='update_cart']")
     private WebElementFacade buttonUpadateCart;
 
-    public void setWordSearchField() {
+    public void setWordSearchField( String searchByWord) {
         withTimeoutOf(10,TimeUnit.SECONDS).waitFor(searchWord);
-        typeInto(searchWord, "beanie");
+        typeInto(searchWord,searchByWord);
 
     }
 
@@ -57,11 +63,10 @@ public class QuantityCartPage extends PageObject {
         clickOn(buttonAddToCart);
     }
 
-    public boolean checkProductIsAddToCart() {
+    public boolean checkProductIsAddToCart(String mesageNameOfProduct) {
         waitFor(addToCartMessages);
-        return addToCartMessages.containsText("Beanie");
+        return addToCartMessages.containsText(mesageNameOfProduct);
     }
-
 
     public void clickToButtonViewCart() {
         clickOn(clickButtonViewCart);
@@ -69,13 +74,27 @@ public class QuantityCartPage extends PageObject {
 
     public void setProductQuantity (){
         clickOn(fieldButtonQty);
-        withTimeoutOf(10,TimeUnit.SECONDS).waitFor(buttonChangeQty);
+        withTimeoutOf(20,TimeUnit.SECONDS).waitFor(buttonChangeQty);
         typeInto(buttonChangeQty,"3");
 
     }
+    public void checkedTotalPrice(){
+        String price = productPrice.getText().trim();
+        String priceFinal = price.replaceAll(",", "").replace(" lei", "");
+        int priceX = Integer.valueOf(priceFinal);
+        int subtotal = priceX * 3;
+        String priceTotal = productTotalPrice.getText().trim();
+        int priceTotalFinal = Integer.valueOf(priceTotal.replace(",", "").replace(" lei", ""));
 
+        if (subtotal == priceTotalFinal){
+            System.out.println("Este corect!");
+        }
+        else {
+            System.out.println("Rezultatul este gresit");
+        }
+    }
     public void clickToButtonUpdateCart(){
-        withTimeoutOf(15,TimeUnit.SECONDS).waitFor(buttonUpadateCart);
+        withTimeoutOf(20,TimeUnit.SECONDS).waitFor(buttonUpadateCart);
         clickOn(buttonUpadateCart);
     }
 

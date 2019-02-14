@@ -1,5 +1,6 @@
 package com.fast.features;
 
+import com.fast.Utils.Constants;
 import com.fast.steps.serenity.HomeSteps;
 import com.fast.steps.serenity.LoginSteps;
 import com.fast.steps.serenity.OrderSteps;
@@ -23,12 +24,10 @@ public class OrderTest {
     OrderSteps orderSteps;
 
     @Test
-    public void chekOrderList(){
+    public void checkOrderList(){
         homeSteps.goToHomePage();
-        loginSteps.setEmailLogin();
-        loginSteps.setPassword();
-        loginSteps.clickOnLoginButton();
-        loginSteps.checkLoggedIn();
+        loginSteps.loginWithValidCredentials(Constants.USER_EMAIL,Constants.USER_PASSWORD);
+        loginSteps.checkLoggedIn("kyalcin.a");
         orderSteps.clickOnOrdersButton();
         orderSteps.clickOnTheViewOrders();
         orderSteps.clickOnTheLogoutButton();

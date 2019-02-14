@@ -17,13 +17,6 @@ public class ReviewPageCap extends PageObject {
     @FindBy(id = "comment")
     private WebElementFacade writeAReview;
 
-    @FindBy(id="author")
-    private WebElementFacade writeName;
-
-    @FindBy(id="email")
-    private WebElementFacade writeEmail;
-
-
     @FindBy(id = "submit")
     private WebElementFacade clickButtonSubmit;
 
@@ -35,22 +28,10 @@ public class ReviewPageCap extends PageObject {
         clickOn(clickOnReviewButton);
     }
 
-    public void writeAnReview() {
+    public void writeAnReview(String writeText) {
         waitFor(writeAReview);
-        typeInto(writeAReview, "This a cap world!");
-
+        typeInto(writeAReview,writeText);
     }
-    public void typeTheName(){
-        waitFor(writeName);
-        typeInto(writeName,"Hellen");
-    }
-
-    public void typeEmail(){
-        waitFor(writeEmail);
-        typeInto(writeEmail,"kyalcin.a@qzvbxqe5dx.tk");
-    }
-
-
 
     public void clickOnTheSubmitButton() {
         clickOn(clickButtonSubmit);

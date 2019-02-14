@@ -59,8 +59,7 @@ public class CheckoutPage extends PageObject {
         clickOn(clickaddToCartButton);
     }
 
-    public void clickOnViewCartButton()
-    {
+    public void clickOnViewCartButton() {
         clickOn(clickViewCart);
     }
 
@@ -69,49 +68,49 @@ public class CheckoutPage extends PageObject {
         clickOn(clickButtonProceedToCheckout);
     }
 
-    public void setBillingFistName(){
-        typeInto(setBillingFirstName,"Chis");
+    public void setBillingFistName(String firstName){
+        typeInto(setBillingFirstName,firstName);
     }
 
-    public void setBillingLastName() {
-        typeInto(setBillingLastName, "Maria-Elena");
+    public void setBillingLastName(String lastName) {
+        typeInto(setBillingLastName,lastName);
     }
 
-    public void setBillingCompany(){
-        typeInto(setBillingCompany,"Nu e cazul");
+    public void setBillingCompany( String nameCompany){
+        typeInto(setBillingCompany,nameCompany);
     }
 
 
-     public void setBillingCountryField(){
-        setCountryField.selectByVisibleText("Romania");
+     public void setBillingCountryField(String nameCountry){
+        setCountryField.selectByVisibleText(nameCountry);
     }
 
-     public  void setBillingAdress(){
-        typeInto(setBillingAdress,"N.Teclu, nr.1");
+     public  void setBillingAdress(String tapeAdress){
+        typeInto(setBillingAdress,tapeAdress);
      }
 
-     public void setBillingAdressTwo(){
-        typeInto(setBillingAdressTwo,"N.Teclu, nr.1");
+     public void setBillingAdressTwo(String tapeAdressOptional){
+        typeInto(setBillingAdressTwo,tapeAdressOptional);
      }
 
-     public void setBillingCity(){
-        typeInto(setBillingCity, "Cluj-Napoca");
-     }
-
-     public void setBillingCountyField(){
-        setBillingCounty.selectByVisibleText("Cluj");
-     }
-
-     public void setBillingPostcode(){
-        typeInto(setBillingPostcode,"400252");
-     }
-
-    public void setBillingPhone(){
-        typeInto(setBillingPhone,"0735112111");
+    public void setBillingCity(String cityName) {
+        typeInto(setBillingCity,cityName);
     }
 
-    public void setBillingEmail(){
-        typeInto(SetBillingEmail,"kyalcin.a@qzvbxqe5dx.tk");
+    public void setBillingCountyField(String countyName) {
+        setBillingCounty.selectByVisibleText(countyName);
+    }
+
+     public void setBillingPostcode(String postCode){
+        typeInto(setBillingPostcode,postCode);
+     }
+
+    public void setBillingPhone(String phone){
+        typeInto(setBillingPhone,phone);
+    }
+
+    public void setBillingEmail(String emailAdress){
+        typeInto(SetBillingEmail,emailAdress);
     }
 
     public void clickButtonPlaceOrder(){

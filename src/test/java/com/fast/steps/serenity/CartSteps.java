@@ -31,8 +31,8 @@ public class CartSteps extends ScenarioSteps {
         cartPage.clickOnRemoveButton();
     }
     @Step
-    public void checkRemovedProduct(){
-        Assert.assertTrue(cartPage.checkRemoveProduct());
+    public void checkRemovedProduct(String messageChecked){
+        Assert.assertTrue(cartPage.checkRemoveProduct(messageChecked));
     }
     @Step
     public void clickRetrurnShopButton(){

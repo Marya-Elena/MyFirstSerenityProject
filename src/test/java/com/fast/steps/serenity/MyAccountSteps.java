@@ -8,38 +8,24 @@ import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class MyAccountSteps extends ScenarioSteps {
-    HomePage homePage;
-    LoginPage loginPage;
+
     MyAccountPage myAccountPage;
-
-    @StepGroup
-     public void goToLoginPage(){
-        homePage.open();
-        homePage.clickMenuButton();
-        homePage.clickMyAccountButton();
-        loginPage.setEmailLoginField();
-        loginPage.setPasswordField();
-        loginPage.clickLoginButton();
-        myAccountPage.checkLoggedIn();
-
-    }
-
     @Step
     public void clickOnTheButtonAccountDetails() {
         myAccountPage.clickOnButtonAccountDetails();
     }
     @Step
-    public void goToSetFirstNameDataAccount() {
-        myAccountPage.setFirstNameDataAccount();
+    public void goToSetFirstNameDataAccount(String firstAccountName) {
+        myAccountPage.setFirstNameDataAccount(firstAccountName);
     }
    @Step
-    public void goToSetLastNameDataAccount(){
-        myAccountPage.setLastNameDataAccount();
+    public void goToSetLastNameDataAccount(String lastNameAccount){
+        myAccountPage.setLastNameDataAccount(lastNameAccount);
    }
 
     @Step
-    public void goToSetEmailAdressDataAccount() {
-        myAccountPage.setEmailAddress();
+    public void goToSetEmailAdressDataAccount(String emailAccount) {
+        myAccountPage.setEmailAddress(emailAccount);
     }
    @Step
     public void clickOnButtonSaveChangesDataAccount(){

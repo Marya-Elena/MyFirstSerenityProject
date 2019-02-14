@@ -10,11 +10,11 @@ import org.junit.Assert;
 
 public class LoginSteps extends ScenarioSteps {
 
-    HomePage homePage;      //creem obiectul de clasa declarandu-l pt a ne putea folosi de actiunile din homepage
-    LoginPage loginPage;    // la fel si cu actiunile din loginPage
+    HomePage homePage;
+    LoginPage loginPage;
     MyAccountPage myAccountPage;
 
-    //imi deschide pagina de homepage ca sa pot da click pe account button
+
     @Step
     public void navigateToHomepage()
     { homePage.open();
@@ -26,24 +26,27 @@ public class LoginSteps extends ScenarioSteps {
     }
 
     @Step
-    public void setEmailLogin(){
-       loginPage.setEmailLoginField();
+    public void loginWithValidCredentials(String email, String password ){
+      loginPage.setEmailLoginField(email);
+      loginPage.setPasswordField(password);
+      loginPage.clickLoginButton();
     }
 
     @Step
-    public void setPassword(){
-        loginPage.setPasswordField();
+    public void checkLoggedIn(String welcomeMessage) {
+        Assert.assertTrue(myAccountPage.checkLoggedIn(welcomeMessage));
     }
 
     @Step
-    public void clickOnLoginButton(){
+    public void checkedLoggedInvalidCredentials(String messageErrorText){
+        Assert.assertTrue(myAccountPage.checkLoggedInvalid(messageErrorText));
+
+    }
+    @Step
+
+    public void loginWithInvalidCredentials(String email,String password){
+        loginPage.setEmailLoginField(email);
+        loginPage.setPasswordField(password);
         loginPage.clickLoginButton();
     }
-
-    @Step
-   public void checkLoggedIn(){
-        Assert.assertTrue(myAccountPage.checkLoggedIn());
-    }
-
-
 }

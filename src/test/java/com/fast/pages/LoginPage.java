@@ -19,15 +19,16 @@ public class LoginPage extends PageObject {
     @FindBy(css= "div  p:nth-child(3) button[value= 'Login']")
     private WebElementFacade loginButton;
 
+     public void setEmailLoginField(String email){
+         typeInto(emailLoginField,email);
 
-     public void setEmailLoginField(){
-       waitFor(emailLoginField);
-       typeInto(emailLoginField,"kyalcin.a@qzvbxqe5dx.tk");}
+     }
 
-     public void setPasswordField(){
-        typeInto(passwordField, "test2019test20"); }
+    public void setPasswordField(String password) {
+        typeInto(passwordField, password);
+    }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         clickOn(loginButton);
     }
 }

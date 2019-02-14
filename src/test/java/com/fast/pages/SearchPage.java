@@ -49,10 +49,9 @@ public class SearchPage extends PageObject {
         clickOn(WordSearchField);
     }
 
-    public void setWordSearchField() {
+    public void setWordSearchField(String searchForProduct) {
         withTimeoutOf(10, TimeUnit.SECONDS).waitFor(searchWord);
-        typeInto(searchWord, "cap");
-
+        typeInto(searchWord, searchForProduct);
     }
 
     public void clickOnTheSearchButton() {

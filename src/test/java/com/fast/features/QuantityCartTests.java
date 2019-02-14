@@ -20,13 +20,13 @@ public class QuantityCartTests {
     private WebDriver driver;
 
     @Steps
-    HomeSteps homeSteps;
+    private HomeSteps homeSteps;
     @Steps
-    CartSteps cartSteps;
+    private CartSteps cartSteps;
     @Steps
-    SearchSteps searchSteps;
+    private SearchSteps searchSteps;
     @Steps
-    QuantityCartSteps quantityCartSteps;
+    private QuantityCartSteps quantityCartSteps;
 
     @Test
 
@@ -35,14 +35,15 @@ public class QuantityCartTests {
         cartSteps.navigateToPageShop();
         searchSteps.navigateToSerachButton();
         searchSteps.searchAftarAWord();
-        quantityCartSteps.typeAWord();
+        quantityCartSteps.typeAWord("beanie");
         quantityCartSteps.clickOnSearchButton();
         quantityCartSteps.clickOnBeanieProductTitle();
         quantityCartSteps.clickOnButtonAddToCart();
-        quantityCartSteps.checkedProductIsAddTocart();
+        quantityCartSteps.checkedProductIsAddToCart("Beanie");
         quantityCartSteps.clickOnTheButtonViewCart();
         quantityCartSteps.clickForChangeQty();
         quantityCartSteps.clickTheButtonUpdateCart();
+        quantityCartSteps.chekedTotalPriceValue();
     }
 
 

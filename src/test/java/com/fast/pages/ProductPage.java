@@ -13,9 +13,9 @@ public class ProductPage extends PageObject {
     @FindBy (css = "div.woocommerce-message")
     private WebElementFacade addToCartMessage;
 
-    public boolean checkAddToCart(){
+    public boolean checkAddToCart(String messageAddToCart){
         waitFor(addToCartMessage);
-       return addToCartMessage.containsText("Beanie” has been added to your cart");
+       return addToCartMessage.containsText(messageAddToCart);
    }
 
 

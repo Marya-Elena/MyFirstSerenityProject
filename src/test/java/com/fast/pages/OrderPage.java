@@ -16,15 +16,15 @@ public class OrderPage extends PageObject {
     @FindBy(css="div.woocommerce li[class*='MyAccount-navigation-link--customer-logout'] a")
     private WebElementFacade logoutButton;
 
-    public void clickOrdersButton(){
+    public void clickOrdersButton() {
         clickOn(ordersButton);
     }
 
-    public void clickOnviewOrders(){
+    public void clickOnviewOrders() {
         clickOn(viewOrders);
     }
 
-    public void clickOnLogoutButton(){
+    public void clickOnLogoutButton() {
         clickOn(logoutButton);
 
     }

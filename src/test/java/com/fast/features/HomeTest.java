@@ -12,7 +12,7 @@ public class HomeTest {
     @Managed(uniqueSession = true)
     private WebDriver driver;
    @Steps
-    HomeSteps homeSteps;
+  private HomeSteps homeSteps;
    @Test
     public void openHomePage(){
        homeSteps.navigateToHomepage();

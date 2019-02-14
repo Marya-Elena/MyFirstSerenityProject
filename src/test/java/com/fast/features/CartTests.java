@@ -17,9 +17,9 @@ public class CartTests {
     private WebDriver driver;
 
     @Steps
-    HomeSteps homeSteps;
+    private HomeSteps homeSteps;
     @Steps
-    CartSteps cartSteps;
+    private CartSteps cartSteps;
 
     @Test
 
@@ -29,7 +29,7 @@ public class CartTests {
         cartSteps.addProductFindInCart("Beanie");
         cartSteps.clickOnSymbolViewCart();
         cartSteps.clickTheRemoveButton();
-        cartSteps.checkRemovedProduct();
+        cartSteps.checkRemovedProduct("“Beanie” removed. Undo?");
         cartSteps.clickRetrurnShopButton();
 
 

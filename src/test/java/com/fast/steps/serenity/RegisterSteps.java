@@ -10,33 +10,20 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class RegisterSteps extends ScenarioSteps {
 
-    HomePage homePage;
     RegisterPage registerPage;
 
-
     @Step
-    public void navigateToHomepage()
-    {
-        homePage.open();
-    }
-    @Step
-    public void goToLogin(){
-        homePage.clickMenuButton();
-        homePage.clickMyAccountButton();
+    public void setEmailRegister(String emailRegister) {
+        registerPage.setEmailRegisterField(emailRegister);
     }
 
     @Step
-    public void setEmailRegister(){
-        registerPage.setEmailRegisterField();
+    public void setPasswordRegister(String passRegistre) {
+        registerPage.setPaswwordRegisterField(passRegistre);
     }
 
     @Step
-    public void setPasswordRegister (){
-        registerPage.setPaswwordRegisterField();
-    }
-
-    @Step
-     public void clickOnTheRegisterButton(){
+    public void clickOnTheRegisterButton() {
         registerPage.clickRegisterButton();
     }
 

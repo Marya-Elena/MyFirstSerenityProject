@@ -7,33 +7,23 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class ReviewCapSteps extends ScenarioSteps {
 
-    HomePage homePage;
-    LoginPage loginPage;
     MyAccountPage myAccountPage;
     SearchPage searchPage;
     ReviewPageCap reviewPageCap;
 
     @StepGroup
     public void goAndLoginAndSearchAProduct(){
-        homePage.open();
-        homePage.clickMenuButton();
-        homePage.clickMyAccountButton();
-        loginPage.setEmailLoginField();
-        loginPage.setPasswordField();
-        loginPage.clickLoginButton();
-        myAccountPage.checkLoggedIn();
+        myAccountPage.checkLoggedIn("kyalcin.a");
         searchPage.clickToSearchButton();
         searchPage.clicksearchProduct();
-        searchPage.setWordSearchField();
+        searchPage.setWordSearchField("cap");
         searchPage.clickOnTheSearchButton();
     }
      @StepGroup
     public void goAndLeavAReview(){
         reviewPageCap.clickOnProductTitle();
         reviewPageCap.clickOnReviewButton();
-        reviewPageCap.writeAnReview();
-       // reviewPageCap.typeTheName();
-       // reviewPageCap.typeEmail();
+        reviewPageCap.writeAnReview("This a cap world!");
         reviewPageCap.clickOnTheSubmitButton();
      }
 

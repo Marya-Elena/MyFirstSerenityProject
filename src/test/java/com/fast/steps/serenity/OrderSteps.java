@@ -6,18 +6,19 @@ import net.thucydides.core.steps.ScenarioSteps;
 
 public class OrderSteps extends ScenarioSteps {
    OrderPage orderPage;
-    @Step
-    public void clickOnOrdersButton(){
-        orderPage.clickOrdersButton();
-    }
+
+   @Step
+   public void clickOnOrdersButton() {
+       orderPage.clickOrdersButton();
+   }
 
     @Step
-    public void clickOnTheViewOrders(){
+    public void clickOnTheViewOrders() {
         orderPage.clickOnviewOrders();
     }
 
     @Step
-    public void clickOnTheLogoutButton(){
+    public void clickOnTheLogoutButton() {
         orderPage.clickOnLogoutButton();
     }
 }

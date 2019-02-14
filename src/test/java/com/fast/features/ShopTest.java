@@ -16,11 +16,11 @@ public class ShopTest {
     @Managed(uniqueSession = true)
     private WebDriver driver;
     @Steps
-    HomeSteps homeSteps;
+    private HomeSteps homeSteps;
     @Steps
-    CartSteps cartSteps;
+    private CartSteps cartSteps;
     @Steps
-    ShopSteps shopSteps;
+    private ShopSteps shopSteps;
     @Test
     public void filterSortBy (){
         homeSteps.navigateToHomepage();
@@ -30,6 +30,10 @@ public class ShopTest {
         shopSteps.clickOnViewProduct();
         shopSteps.clickOnViewCart();
         shopSteps.checkedTotal();
+        shopSteps.typeCouponCode("Free shop,123");
+        shopSteps.clickApplyCouponButton();
+        shopSteps.checkedCouponMessageError("Coupon \"free shop,123\" does not exist!");
+        shopSteps.clickOnTheButtonProceedToCheeckout();
 
     }
 
